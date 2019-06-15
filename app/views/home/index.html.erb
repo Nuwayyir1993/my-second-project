@@ -1,0 +1,47 @@
+<link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+<%= stylesheet_link_tag "application.css" %>
+
+<div id='nav'>
+  welcom <%= current_user.email %> # <%= current_user.id %> - <a href='/products'>Go to shope</a>
+  <form method='POST' action='/users/sign_out'>
+  <input type='hidden' name='_method' value='DELETE' />
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <button id='logout-btn'>Logout</button>
+  </form>
+</div>
+
+<div id="page-content">
+<br/>
+<% if current_user.cart_items.length == 0 %>
+<h3>You cart is empty :(</h3>
+<% end %>
+<% if current_user.cart_items.length > 0 %>
+<h2>Your cart items</h2>
+<br/>
+<table class='pink_table'>
+<thead>
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Delete</th>
+  </tr>
+</thead>
+
+<tbody>
+  <% current_user.cart_items.each do |cart_item| %>
+    <tr>
+      <td><%= cart_item.product.prd_name %></td>
+      <td><%= cart_item.product.prd_price %></td>
+      <td>
+      <form method='post' action='/cart_items/<%= cart_item.id %>'>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type='hidden' name='_method' value='delete' />
+      <button class='btns red-btn'>delete</button>
+      </form>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+<% end %>
+</div>

@@ -1,0 +1,166 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ a:hover{
+    background-color: #fff0;
+    color:#000;
+ }
+
+ *{
+    font-family: 'Questrial', sans-serif;
+  }
+  .btns{
+    background-color: #000;
+    color: white;
+    border: 0px;
+    padding: 3px;
+    width: 100px;
+    cursor: pointer;
+    border-radius:3px;
+  }
+  .red-btn{
+    background-color: #ef5252;
+  }
+  .red-btn:hover{
+    background-color: #d03232;
+  }
+  .blue-btn{
+    background-color: #209492;
+  }
+  .blue-btn:hover{
+    background-color: #45a19f;
+  }
+  html, body{
+    padding:0;
+    margin:0;
+  }
+  body{
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #page-content{
+  margin-top:100px;
+  margin-left:20px;
+  }
+  #nav{
+    padding-left:10px;
+    padding-top:20px;
+    background-color:#9144a1;
+    color:white;
+    height:40px;
+    width:100vw;
+    position:fixed;
+    z-index:999;
+    top:0;
+    box-shadow: 0px 2px 4px #5f5f5f;
+  }
+  #nav a{
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    background-color:#b568d9;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  #nav a:hover{
+    color:#30024d;
+    background-color: white;
+  }
+
+  
+  .pink_table {
+    border-collapse: collapse;
+  }
+  
+  .pink_table, .pink_table th, .pink_table td {
+    border: 1px solid black;
+  }
+  .pink_table th{
+    height:50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #c06fd1;
+    color: white;
+  }
+  .pink_table td a{
+    text-decoration:none;
+    color:black;
+  
+  }
+  .pink_table td{
+    padding: 6px;
+    vertical-align: sub;
+    text-align: center;
+    background-color: white;
+  }
+
+  #products-container {
+    display: grid;
+    grid-template-columns: 175px 175px 175px 175px 175px 175px;
+    grid-gap: 10px;
+    background-color: #fff0;
+    color: #444;
+  }
+
+  #product-card {
+    background-color: #ecececcc;
+    color: #414141;
+    border-radius: 2px;
+    padding: 20px;
+    font-size: 15px;
+    border: 1px solid #3939395e
+  }
+
+  #product-card #prd_img{
+    width: 134px;
+    height: 134px;
+    background-color:white;
+    border:2px solid black;
+    margin-left:-3px;
+  }
+ 
+
+  #product-card #prd_price{
+    font-size: 12px;
+    background-color: #4fb14f;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+    border-radius:3px; 
+  }
+  #product-card #prd_quantity{
+    font-size: 12px;
+    color: #a907a0;
+  }
+
+  #product-card #prd_name{
+    float: left;
+    min-height: 50px;
+  }
+
+  #product-card #add_to_cart{
+    margin-top:10px;
+  }
+  #logout-btn{
+    float: right;
+    margin-right: 40px;
+    margin-top: -17px;
+    background-color: #efefef;
+    border:0px;
+    border-radius:2px;
+    color:black;
+    cursor:pointer;
+  }

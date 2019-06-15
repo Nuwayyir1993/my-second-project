@@ -1,0 +1,56 @@
+<link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+<%= stylesheet_link_tag "application.css" %>
+
+<div id='nav'>
+welcom <%= current_user.email %> # <%= current_user.id %> - <a href='/'>Dashboard</a>
+<form method='POST' action='/users/sign_out'>
+<input type='hidden' name='_method' value='DELETE' />
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<button id='logout-btn'>Logout</button>
+</form>
+</div>
+
+
+<div id="page-content">
+<% if @products.length == 0 %>
+This shope has no products
+<% end %>
+<% if @products.length > 0 %>
+<h1>Products</h1>
+
+<div id='products-container'>
+  <% @products.each do |product| %>
+    <div id='product-card'>
+    <div id='prd_name'>
+    <%= product.prd_name %>
+  </div>
+      <img alt='' src='<%= product.prd_img %>' id='prd_img'/>
+      <center>
+      <div id='prd_price'><%= product.prd_price %> SAR</div>
+      <div id='prd_quantity'>
+        <%= product.prd_quantity %> Available
+      </div>
+      </center>
+      <form method='POST' action='/cart_items'>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="hidden" name="cart_item[product_id]" id="cart_item_product_id" value='<%= product.id %>' />
+      <input type="hidden" name="cart_item[user_id]" id="cart_item_user_id" value='<%= current_user.id %>' />
+     <center>
+     <button title='<%= product.id %>' id='add_to_cart' class='btns blue-btn'>Add To Cart</button>
+     </center>
+     </form>
+     <% if current_user.email == 'nona@gmail.com' %>
+     <form method='POST' action='/products/<%= product.id %>'>
+     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type='hidden' name='_method' value='delete' />
+    <center>
+    <button title='<%= product.id %>' id='add_to_cart' class='btns red-btn'>DELETE</button>
+    </center> 
+    </form>
+    <% end %>
+    </div>
+  <% end %>
+</div>
+<% end %>
+<%= link_to 'New Product', new_product_path %>
+</div>
