@@ -1,12 +1,17 @@
-<link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
-<%= stylesheet_link_tag "application.css" %>
+
+ <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+ <%= stylesheet_link_tag "application.css" %>
+ <script
+ src="https://code.jquery.com/jquery-3.4.1.min.js"
+ integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+ crossorigin="anonymous"></script>
 
 <div id='nav'>
-  welcom <%= current_user.email %> # <%= current_user.id %> - <a href='/products'>Go to shope</a>
+  welcom <%= current_user.email %> # <%= current_user.id %> - <a class="sbtn" href='/products'>Go to shope</a>
   <form method='POST' action='/users/sign_out'>
   <input type='hidden' name='_method' value='DELETE' />
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <button id='logout-btn'>Logout</button>
+  <button  id='logout-btn'>Logout</button>
   </form>
 </div>
 
@@ -21,7 +26,7 @@
 <table class='pink_table'>
 <thead>
   <tr>
-    <th>Product</th>
+    <th class="sbtn">Product</th>
     <th>Price</th>
     <th>Delete</th>
   </tr>
@@ -36,7 +41,7 @@
       <form method='post' action='/cart_items/<%= cart_item.id %>'>
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <input type='hidden' name='_method' value='delete' />
-      <button class='btns red-btn'>delete</button>
+      <button class='btns red-btn sbtn'>delete</button>
       </form>
       </td>
     </tr>
@@ -45,3 +50,5 @@
 </table>
 <% end %>
 </div>
+  <%= javascript_include_tag "application.js" %>
+

@@ -14,3 +14,14 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+
+function sound(){
+    
+     var audio = new Audio('/audio/beep.mp3');
+     //audio.src ="audio/beep.mp3";
+     audio.play();
+   }
+$('.sbtn').on('click',sound);
+$('#logout-btn').on('click',sound);

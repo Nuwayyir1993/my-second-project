@@ -7,16 +7,24 @@
     <%= stylesheet_link_tag "application.css" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
   </head>
 
   <body>
-    
+  <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
     <%= yield %>
-    <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
+    
+
+  <%= javascript_include_tag "application.js" %>
+  
   </body>
 </html>

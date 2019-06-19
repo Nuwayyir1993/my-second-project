@@ -1,12 +1,14 @@
 <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <%= stylesheet_link_tag "application.css" %>
 
 <div id='nav'>
-welcom <%= current_user.email %> # <%= current_user.id %> - <a href='/'>Dashboard</a>
+welcom <%= current_user.email %> # <%= current_user.id %> - <a class="sbtn" href='/'>Dashboard</a>
 <form method='POST' action='/users/sign_out'>
 <input type='hidden' name='_method' value='DELETE' />
 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 <button id='logout-btn'>Logout</button>
+
 </form>
 </div>
 
@@ -38,6 +40,7 @@ This shope has no products
      <center>
      <button title='<%= product.id %>' id='add_to_cart' class='btns blue-btn'>Add To Cart</button>
      </center>
+     
      </form>
      <% if current_user.email == 'nona@gmail.com' %>
      <form method='POST' action='/products/<%= product.id %>'>
@@ -52,5 +55,7 @@ This shope has no products
   <% end %>
 </div>
 <% end %>
+
 <%= link_to 'New Product', new_product_path %>
+
 </div>
