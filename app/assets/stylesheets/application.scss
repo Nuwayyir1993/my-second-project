@@ -51,7 +51,9 @@
     margin:0;
   }
   body{
-    background-image: url(b.png);
+    //background-image: url(b.png);
+    background-image: url(asset-path('b.png'));
+    
     background-repeat: no-repeat;
     background-size: cover;
   }
