@@ -1,24 +1,30 @@
 # README
+#What is the app about?
+e-commerce application 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Is there any information you think might help us understand what you built?
+user can add item to the cart-admin can add product and spicify the price and the avalibale quintetiy ....and all related information to that specific product.
 
-Things you may want to cover:
+#What features did you include?
+create-edit-show-delete
+devise
+bootstap
+responsive
+3 resources cart,product,user
+validation
+js
 
-* Ruby version
+#Is there anything "new" (things that we didn't cover in class) you want to explain?
+error handling and helpful tips to identify the id of the elements we have.
 
-* System dependencies
+#What was the most difficult part of the project?
+db , some fuzzty/unclear rail errors
 
-* Configuration
+#What was your favourite part to work on?
+js,css,traking rails error
 
-* Database creation
+#What would you like to add next?
+add an actual admin which can veiw all users' info.
+admin can delete.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Show us a demo of your app.
